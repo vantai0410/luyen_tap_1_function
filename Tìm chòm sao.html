@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 3</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(194, 5, 5)">Tìm chòm sao tương ứng</h1>
+    <button style="width: 130px; height: 30px" onclick="result()">Run</button>
+    <p id="result"></p>
+  </body>
+  <script>
+    let arr1 = [
+      "Polaris",
+      "Aldebaran",
+      "Deneb",
+      "Vega",
+      "Altair",
+      "Dubhe",
+      "Regulus",
+    ];
+    let arr2 = [
+      "Ursa Minor",
+      "Tarurus",
+      "Cygnus",
+      "Lyra",
+      "Aquila",
+      "Ursa Major",
+      "Leo",
+    ];
+    function searchStar(star) {
+      for (let i = 0; i < arr1.length; i++) {
+        if (star === arr1[i]) {
+          return "Ngôi sao " + star + " thuộc chòm sao " + arr2[i];
+        }
+      }
+      return (document.getElementById("result").innerHTML =
+        "không tìm thấy chòm sao");
+    }
+    function result() {
+      let star = prompt("nhap ngoi sao");
+      let result = searchStar(star);
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+</html>

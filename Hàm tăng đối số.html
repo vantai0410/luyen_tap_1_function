@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(194, 5, 5)">Hàm tăng đối số lên 1</h1>
+    <button style="width: 130px; height: 30px" onclick="result()">Run</button>
+    <p id="result"></p>
+  </body>
+  <script>
+    function tangDonVi(number) {
+      return number + 1;
+    }
+
+    function result() {
+      let number = +prompt("Nhập vào số muốn tăng giá trị");
+      let result = tangDonVi(number);
+      document.getElementById("result").textContent = "Kết quả: " + result;
+    }
+  </script>
+</html>

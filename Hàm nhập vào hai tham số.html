@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 3</title>
+  </head>
+  <body>
+    <h1 style="color: rgb(194, 5, 5)">Hàm nhập vào hai tham số</h1>
+    <button style="width: 130px; height: 30px" onclick="result()">Run</button>
+    <p id="result"></p>
+  </body>
+  <script>
+    function nhapThamSo(a, b) {
+      if (a > b) {
+        return (document.getElementById("result").innerHTML =
+          "Số" + a + " lớn hơn số" + b);
+      } else {
+        let sum = a + b;
+        return (document.getElementById("result").innerHTML =
+          "Tổng của hai số a,b là: " + sum);
+      }
+    }
+
+    function result() {
+      let a = +prompt("nhap so a");
+      let b = +prompt("nhap so b");
+      let result = nhapThamSo(a, b);
+      result = document.getElementById("result").textContent =
+        "Kết quả: " + result;
+    }
+  </script>
+</html>
