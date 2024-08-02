@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí sản phầm</title>
+    <style></style>
+</head>
+<h2>Add new product</h2>
+<input type="text" id="add" placeholder="New product">
+<button onclick="addProduct()">Add Product</button>
+<h2>Display Product</h2>
+<body>
+<table >
+    <thead>
+    <tr>
+        <td><b>Product Name</b></td>
+        <td></td>
+        <td></td>
+        <td id="total"></td>
+    </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
+<script>
+    let array = ["Sony","Samsung","Iphone","Wave"];
+    function displayProduct(arr){
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+            str += "<tr>" +
+                "<td>" + arr[i] + "</td>" +
+                "<td>"+"<button>Edit</button>"+"</td>" +
+                "<td>" +"<button onclick='deleteProduct("+ i +")'>Delete</button>"+"</td>"+
+            "</tr>";
+        }
+    document.getElementById("tbody").innerHTML = str;
+    document.getElementById("total").innerHTML = arr.length + " products";
+    }
+    displayProduct(array);
+
+    function addProduct(){
+        let newProduct = document.getElementById("add").value
+        array.push(newProduct);
+        displayProduct(array);
+        document.getElementById("add").value = "";
+    }
+
+    function deleteProduct(i){
+        let check = confirm("Ban chac chan muon xoa " + array[i] + "?" );
+        if(check){
+            array.splice(i,1);
+            alert("Delete successfully");
+        }
+        displayProduct(array);
+    }
+
+</script>
+</body>
+</html>

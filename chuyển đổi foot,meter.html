@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+  <h1>Chuyển đổi giữa feet và meters</h1>
+  <button onclick= "convertFeerToMeter()">Chuyển feet sang meters</button>
+  <button onclick="convertMeterToFeet()">Chuyển meters sang feet</button>
+  <p id="result"></p>
+  </body>
+  <script>
+    function footToMeter(foot) {
+      return 0.305 * foot;
+    }
+
+    function meterToFoot(meter) {
+      return 3.279 * meter;
+    }
+    function convertFeerToMeter(){
+      let feet = +prompt("nhap feet");
+      let metter = footToMeter(parseFloat(feet));
+      //toFixed : lam tron 2 chu so thap phan
+      document.getElementById("result").innerText = feet + "feet = " + metter.toFixed(2) + " meters";
+    }
+    function convertMeterToFeet() {
+      let meters = prompt("Nhập số meters:");
+      let feet = meterToFoot(parseFloat(meters));
+      document.getElementById("result").innerText = meters + " meters = " + feet.toFixed(2) + " feet";
+    }
+  </script>
+</html>
